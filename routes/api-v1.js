@@ -21,5 +21,11 @@ router.delete('/menu/:id', async (request, response) => {
     const result = await collection.deleteOne({ _id: new ObjectId(id) });
     response.json(result.deletedcount);
 })
+router.post('/menu', async (request, response) => {
+    const { name, description, price } = request.body
+    const collection = await getCollection('FoodTruck-API', 'Menu')
+    await collection.insertOne({ name, description, price })
+	response.json({"Message": "Menu item added"})
+})
 
 module.exports = router

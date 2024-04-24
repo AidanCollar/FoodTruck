@@ -5,3 +5,13 @@ http://localhost:3000/api/menu
 
 ### DELETE menu
 DELETE http://localhost:3000/api/menu/662854895d626f0ed814ffcf
+### POST menu
+
+POST http://localhost:3000/api/menu
+Content-Type: application/json
+
+{
+  "name": "test name",
+  "description": "test description",
+  "price": "test price"
+}
