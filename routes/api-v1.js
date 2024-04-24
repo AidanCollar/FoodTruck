@@ -28,4 +28,13 @@ router.post('/menu', async (request, response) => {
 	response.json({"Message": "Menu item added"})
 })
 
+router.put('/menu/:id', async (request, response) => {
+    const id = request.params.id
+    const collection = await getCollection('FoodTruck-API', 'Menu')
+    const menuItem = await collection.findOne({ _id: new ObjectId(id) })
+    // will need to grab info from menu page with site.js
+    // await collection.updateOne()
+
+})
+
 module.exports = router
