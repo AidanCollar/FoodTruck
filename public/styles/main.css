@@ -1,11 +1,12 @@
+
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     background-color: rgb(199, 199, 199);
 }
 
 nav{
-    background-color: skyblue;
+    background-color: orange;
     min-height: 80px;
-    
 }
 
 nav ul{
@@ -27,7 +28,80 @@ nav a{
     text-decoration: none;
 }
 
+nav a:hover{
+    color: rgb(129, 71, 0);
+}
+
+section{
+    margin-top: 30px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgb(105, 68, 0, 50%);
+}
+
+section h2{
+    color: rgb(129, 71, 0);
+}
+
+section p{
+    color: rgb(129, 71, 0);
+    line-height: 1.3em;
+    
+}
+
 div{
+   
     margin: 0 auto;
     width: 1500px;
+}
+
+
+
+#menu {
+    margin: 0 auto;
+    color: rgb(129, 71, 0);
+    border: 4px ridge orange;
+    border-collapse: collapse;
+    background-color: rgb(172, 172, 172);
+}
+
+#menu th{
+    color: rgb(104, 57, 0);
+    font-size: 1.3em;
+    padding: 5px;
+}
+
+#menu th:nth-of-type(1){
+    width: 400px;
+    text-align: left;
+}
+
+#menu th:nth-of-type(2){
+    width: 700px;
+    text-align: left;
+}
+
+#menu th:nth-of-type(3){
+    width: 200px;
+    text-align: left;
+}
+
+#menu td{
+    background-color: white;
+    padding: 5px;
+}
+
+ol li{
+    color: rgb(129, 71, 0);
+    line-height: 1.3em;
+    margin-bottom: 20px;
+}
+
+footer{
+    background-color: orange;
+    height: 50px;
+}
+
+footer p{
+    padding-top: 13px;
+    margin-left: 20px;
 }
