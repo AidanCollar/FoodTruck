@@ -1,3 +1,7 @@
 ### GET menu
 
 http://localhost:3000/api/menu
+
+
+### DELETE menu
+DELETE http://localhost:3000/api/menu/662854895d626f0ed814ffcf

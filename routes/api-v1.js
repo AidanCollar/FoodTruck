@@ -15,4 +15,11 @@ router.get('/menu', async (request, response) => {
 	response.json(menu)
 })
 
+router.delete('/menu/:id', async (request, response) => {
+    const{id}=request.params
+    const collection = await getCollection('FoodTruck-API', 'Menu')
+    const result = await collection.deleteOne({ _id: new ObjectId(id) });
+    response.json(result.deletedcount);
+})
+
 module.exports = router
