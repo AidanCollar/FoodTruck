@@ -15,4 +15,11 @@ router.get('/menu', async (request, response) => {
 	response.json(menu)
 })
 
+router.post('/menu', async (request, response) => {
+    const { name, description, price } = request.body
+    const collection = await getCollection('FoodTruck-API', 'Menu')
+    await collection.insertOne({ name, description, price })
+	response.json({"Message": "Menu item added"})
+})
+
 module.exports = router
