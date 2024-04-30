@@ -24,17 +24,44 @@ router.delete('/menu/:id', async (request, response) => {
 router.post('/menu', async (request, response) => {
     const { name, description, price } = request.body
     const collection = await getCollection('FoodTruck-API', 'Menu')
-    await collection.insertOne({ name, description, price })
-	response.json({"Message": "Menu item added"})
+    const result = await collection.insertOne({ name, description, price })
+	response.json(result)
 })
 
 router.put('/menu/:id', async (request, response) => {
-    const id = request.params.id
+    const {id} = request.params.id
     const collection = await getCollection('FoodTruck-API', 'Menu')
     const menuItem = await collection.findOne({ _id: new ObjectId(id) })
-    // will need to grab info from menu page with site.js
-    // await collection.updateOne()
-
+    const { name, description, price } = request.body
+    const result = await collection.updateOne({ _id: new ObjectId(id) }, { $set: { name, description, price } })
+	response.json(result)
 })
 
+router.put('/event/:id', async (request, response) => {
+    const {id} = request.params.id
+    const collection = await getCollection('FoodTruck-API', 'Event')
+    const events = await collection.findOne({ _id: new ObjectId(id) })
+    
+})
+
+
+router.delete('/event/:id', async (request, response) => {
+    const{id}=request.params
+    const collection = await getCollection('FoodTruck-API', 'Event')
+    const result = await collection.deleteOne({ _id: new ObjectId(id) });
+    response.json(result.deletedcount);
+})
+
+router.get('/event', async (request, response) => {
+    const collection = await getCollection('FoodTruck-API', 'Event')
+    const event = await collection.find().toArray()
+	response.json(event)
+})
+
+router.get('/event/:id', async (request, response) => {
+    const{id}=request.params
+    const collection = await getCollection('FoodTruck-API', 'Event')
+    const result = await collection.findOne({ _id: new ObjectId(id) });
+    response.json({result});
+})
 module.exports = router
