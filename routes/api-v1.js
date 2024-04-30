@@ -29,7 +29,7 @@ router.post('/menu', async (request, response) => {
 })
 
 router.put('/menu/:id', async (request, response) => {
-    const id = request.params.id
+    const {id} = request.params.id
     const collection = await getCollection('FoodTruck-API', 'Menu')
     const menuItem = await collection.findOne({ _id: new ObjectId(id) })
     // will need to grab info from menu page with site.js
@@ -37,4 +37,31 @@ router.put('/menu/:id', async (request, response) => {
 
 })
 
+router.put('/event/:id', async (request, response) => {
+    const {id} = request.params.id
+    const collection = await getCollection('FoodTruck-API', 'Event')
+    const events = await collection.findOne({ _id: new ObjectId(id) })
+    
+})
+
+
+router.delete('/event/:id', async (request, response) => {
+    const{id}=request.params
+    const collection = await getCollection('FoodTruck-API', 'Event')
+    const result = await collection.deleteOne({ _id: new ObjectId(id) });
+    response.json(result.deletedcount);
+})
+
+router.get('/event', async (request, response) => {
+    const collection = await getCollection('FoodTruck-API', 'Event')
+    const event = await collection.find().toArray()
+	response.json(event)
+})
+
+router.get('/event/:id', async (request, response) => {
+    const{id}=request.params
+    const collection = await getCollection('FoodTruck-API', 'Event')
+    const result = await collection.findOne({ _id: new ObjectId(id) });
+    response.json({result});
+})
 module.exports = router

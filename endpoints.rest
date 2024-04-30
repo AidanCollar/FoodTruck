@@ -15,3 +15,13 @@ Content-Type: application/json
   "description": "test description",
   "price": "test price"
 }
+
+###get menu
+http://localhost:3000/api/menu
+
+###get event
+http://localhost:3000/api/event
+
+
+###get specific event from id
+http://localhost:3000/api/event/662848c8173fdd8cf85b68aa
