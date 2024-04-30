@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Screamers - Admin</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+        </nav>
+        <img src="images/banner.jpg" alt="ice cream banner" width="100%">
+        <h1></h1>
+    </header>
+    <div id="wrapper">
+        
+        <h2>Menu</h2>
+
+        <form class="menu">
+            <label for="id">Item ID</label>
+            <br>
+            <input type="text" name="id" id="itemID" size="50">
+            <br>
+            <label for="name">Item Name</label>
+            <br>
+            <input type="text" name="name" id="itemName" size="50">
+            <br>
+            <label for="desc">Item Description</label>
+            <br>
+            <input type="text" name="desc" id="itemDesc" size="75">
+            <br>
+            <label for="Price">Item Price</label>
+            <br>
+            <input type="text" name="Price" id="itemPrice">
+            <br>
+            <input type="button" name="Add" value="Add" id="menuAdd">
+            <input type="button" name="Update" value="Update" id="menuUpdate">
+            <input type="button" name="Delete" value="Delete" id="menuDelete">
+        </form>
+
+        <h2>Events</h2>
+
+        <form class="event">
+            <label for="id">Event ID</label>
+            <br>
+            <input type="text" name="id" id="eventID" size="50">
+            <br>
+            <label for="name">Event Name</label>
+            <br>
+            <input type="text" name="name" id="eventName" size="50">
+            <br>
+            <label for="local">Event Location</label>
+            <br>
+            <input type="text" name="local" id="eventLocation" size="75">
+            <br>
+            <label for="Price">Event Date</label>
+            <br>
+            <input type="text" name="Price" id="eventDate">
+            <br>
+            <label for="Price">Event Time</label>
+            <br>
+            <input type="text" name="Price" id="eventTime">
+            <br>
+            <input type="button" name="Add" value="Add" id="menuAdd">
+            <input type="button" name="Update" value="Update" id="menuUpdate">
+            <input type="button" name="Delete" value="Delete" id="menuDelete">
+        </form>
+
+    </div>
+        <footer>
+            <p><small>© 2024 The Screamers Ice Cream Truck</small></p>
+        </footer>
+</body>
+</html>
