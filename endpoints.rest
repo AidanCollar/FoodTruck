@@ -5,8 +5,8 @@ http://localhost:3000/api/menu
 
 ### DELETE menu
 DELETE http://localhost:3000/api/menu/662854895d626f0ed814ffcf
-### POST menu
 
+### POST menu
 POST http://localhost:3000/api/menu
 Content-Type: application/json
 
@@ -16,12 +16,14 @@ Content-Type: application/json
   "price": "test price"
 }
 
-###get menu
-http://localhost:3000/api/menu
+### PUT menu
+PUT http://localhost:3000/api/menu/6631738738f258b1e2b5a65a
+Content-Type: application/json
 
-###get event
-http://localhost:3000/api/event
+{
+  "name": "update name2",
+  "description": "update description2",
+  "price": "update price2"
+}
 
-
-###get specific event from id
-http://localhost:3000/api/event/662848c8173fdd8cf85b68aa
+###
