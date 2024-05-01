@@ -22,6 +22,21 @@ const displayMenu = async () => {
     })
 }
 
-
-
 displayMenu()
+
+
+
+
+const menuAdd = document.querySelector('#menuAdd')
+menuAdd.addEventListener('click', async () => {
+    const itemName = document.querySelector('#itemName').value
+    const itemDesc = document.querySelector('#itemDesc').value
+    const itemPrice = document.querySelector('#itemPrice').value
+    const response = await fetch('/api/menu', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: itemName, description: itemDesc, price: itemPrice })
+    })
+    const menuMessage = document.querySelector('.menuMessage')
+    menuMessage.textContent = "Menu Item Added"
+})
