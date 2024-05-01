@@ -12,10 +12,6 @@ const displayMenu = async () => {
 		const tdName = document.createElement('td')
 		tdName.textContent = item.name
 		tr.append(tdName)
-
-
-
-
         const tdDescription = document.createElement('td')
 		tdDescription.textContent = item.description
 		tr.append(tdDescription)
