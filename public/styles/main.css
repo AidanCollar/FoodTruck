@@ -15,10 +15,14 @@ nav ul{
 }
 
 nav li{
-    width: 180px;
+    width: 240px;
     list-style: none;
     margin-left: 90px;
     margin-top: 20px;
+}
+
+nav li:last-of-type{
+    margin-left: 140px;
 }
 
 nav a{
@@ -90,45 +94,14 @@ div#wrapper{
     padding: 5px;
 }
 
-/* Event Stuff */
-
-#events {
-    margin: 0 auto;
-    color: rgb(129, 71, 0);
-    border: 4px ridge orange;
-    border-collapse: collapse;
-    background-color: rgb(172, 172, 172);
+.column{
+    display: flex;
 }
 
-#events th{
-    color: rgb(104, 57, 0);
-    font-size: 1.3em;
-    padding: 5px;
-}
-
-#events th:nth-of-type(1){
-    width: 400px;
-    text-align: left;
-}
-
-#events th:nth-of-type(2){
-    width: 650px;
-    text-align: left;
-}
-
-#events th:nth-of-type(3){
-    width: 250px;
-    text-align: left;
-}
-
-#events th:nth-of-type(4){
-    width: 200px;
-    text-align: left;
-}
-
-#events td{
-    background-color: white;
-    padding: 5px;
+.column form:first-of-type{
+    border-right: 1px solid rgb(168, 168, 168);
+    padding-right: 80px;
+    margin-right: 80px;
 }
 
 ol li{
