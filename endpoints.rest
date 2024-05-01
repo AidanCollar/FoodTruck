@@ -1,10 +1,5 @@
 ### GET menu
-
 http://localhost:3000/api/menu
-
-
-### DELETE menu
-DELETE http://localhost:3000/api/menu/662854895d626f0ed814ffcf
 
 ### POST menu
 POST http://localhost:3000/api/menu
@@ -17,13 +12,48 @@ Content-Type: application/json
 }
 
 ### PUT menu
-PUT http://localhost:3000/api/menu/6631738738f258b1e2b5a65a
+PUT http://localhost:3000/api/menu/66318e98d396033df73a1a2e
 Content-Type: application/json
 
 {
-  "name": "update name3",
-  "description": "update description3",
-  "price": "update price3"
+  "name": "update name",
+  "description": "update description",
+  "price": "update price"
 }
 
-###
+### DELETE menu
+DELETE http://localhost:3000/api/menu/66318eabd396033df73a1a2f
+
+
+
+### GET events
+http://localhost:3000/api/event
+
+### GET event by id
+http://localhost:3000/api/event/662848cb89fef556df502208
+
+### POST event
+PUT http://localhost:3000/api/event/
+Content-Type: application/json
+
+{
+  "name": "test name",
+  "location": "test location",
+  "date": "test date",
+  "hours": "test hours"
+}
+
+### PUT event
+PUT http://localhost:3000/api/event/X
+Content-Type: application/json
+
+{
+  "name": "update name",
+  "location": "update location",
+  "date": "update date",
+  "hours": "update hours"
+}
+
+### DELETE event
+DELETE http://localhost:3000/api/event/6631823483ae523f136576ef
+
