@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Screamers - Menu</title>
+    <title>The Screamers - Events</title>
     <link rel="stylesheet" href="styles/main.css">
     <script src="scripts/site.js" defer></script>
-
 </head>
 <body>
     <header>
@@ -22,13 +21,25 @@
         
     </header>
     <div id="wrapper">
-        <table id="menu">
-            <tr>
-                <th>Item</th>
-                <th>Description</th>
-                <th>Price</th>
-            </tr>
-        </table>
+        <h2>Contact Us</h2>
+        <form id="contact">
+            <label for="fullname">Your Name</label>
+            <br>
+            <input type="text" name="fullname" size="60">
+            <p></p>
+            <label for="email">Your Email</label>
+            <br>
+            <input type="email" name="email" required size="60">
+            <p></p>
+            <label for="message">Message</label>
+            <br>
+            <input type="text" name="message" size="60" style="height: 200px;">
+            <p></p>
+            <input type="submit" value="Send" style="width: 100px; height: 30px;">
+        </form>
+
+        <p>Call us at (920)-559-1268</p>
+
     </div>
         <footer>
             <p><small>© 2024 The Screamers Ice Cream Truck</small></p>

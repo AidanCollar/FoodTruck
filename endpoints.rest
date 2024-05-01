@@ -21,9 +21,9 @@ PUT http://localhost:3000/api/menu/6631738738f258b1e2b5a65a
 Content-Type: application/json
 
 {
-  "name": "update name2",
-  "description": "update description2",
-  "price": "update price2"
+  "name": "update name3",
+  "description": "update description3",
+  "price": "update price3"
 }
 
 ###
