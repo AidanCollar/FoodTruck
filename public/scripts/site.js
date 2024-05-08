@@ -22,6 +22,4 @@ const displayMenu = async () => {
     })
 }
 
-
-
 displayMenu()

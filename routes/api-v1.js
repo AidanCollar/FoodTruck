@@ -39,12 +39,20 @@ router.put('/menu/:id', async (request, response) => {
 })
 
 router.put('/event/:id', async (request, response) => {
-    const {id} = request.params.id
+    const id = request.params.id
     const collection = await getCollection('FoodTruck-API', 'Event')
     const events = await collection.findOne({ _id: new ObjectId(id) })
-    
+    const { name, location, date, hours } = request.body
+    const result = await collection.updateOne({ _id: new ObjectId(id) }, { $set: { name, location, date, hours } })
+	response.json(result)
 })
 
+router.post('/event', async (request, response) => {
+    const{name, location, date, hours} = request.body
+    const collection = await getCollection('FoodTruck-API', 'Event')
+    const result = await collection.insertOne({name, location, date, hours});
+    response.json(result);
+})
 
 router.delete('/event/:id', async (request, response) => {
     const{id}=request.params

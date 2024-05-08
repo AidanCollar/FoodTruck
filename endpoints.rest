@@ -33,7 +33,7 @@ http://localhost:3000/api/event
 http://localhost:3000/api/event/662848cb89fef556df502208
 
 ### POST event
-PUT http://localhost:3000/api/event/
+POST http://localhost:3000/api/event/
 Content-Type: application/json
 
 {
@@ -44,7 +44,7 @@ Content-Type: application/json
 }
 
 ### PUT event
-PUT http://localhost:3000/api/event/X
+PUT http://localhost:3000/api/event/x
 Content-Type: application/json
 
 {
