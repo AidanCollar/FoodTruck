@@ -102,6 +102,54 @@ menuDelete.addEventListener('click',async ()=>{
         method: 'DELETE'
     })
     const menuMessage = document.querySelector('.menuMessage')
-    if (response.status == 200) menuMessage.textContent = "Menu Item Deleted!!!!!! "
+    if (response.status == 200) menuMessage.textContent = "Menu Item Deleted"
     console.log(response);
+
+}) 
+// Admin page functionality - Events
+
+const eventAdd = document.querySelector('#eventAdd')
+eventAdd.addEventListener('click', async () => {
+    const eventName = document.querySelector('#eventName').value
+    const eventLocation = document.querySelector('#eventLocation').value
+    const eventDate = document.querySelector('#eventDate').value
+    const eventTime = document.querySelector('#eventTime').value
+    const response = await fetch('/api/event', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: eventName, location: eventLocation, date: eventDate, hours: eventTime })
+    })
+    const menuMessage = document.querySelector('.eventMessage')
+    if (response.status == 200) menuMessage.textContent = "Event Added"
+    // console.log(response)
+})
+
+const eventUpdate = document.querySelector('#eventUpdate')
+eventUpdate.addEventListener('click', async () => {
+    const eventID = document.querySelector('#eventID').value
+    const eventName = document.querySelector('#eventName').value
+    const eventLocation = document.querySelector('#eventLocation').value
+    const eventDate = document.querySelector('#eventDate').value
+    const eventTime = document.querySelector('#eventTime').value
+    const response = await fetch(`/api/event/${eventID}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: eventName, location: eventLocation, date: eventDate, hours: eventTime })
+    })
+    const menuMessage = document.querySelector('.eventMessage')
+    if (response.status == 200) menuMessage.textContent = "Event Updated"
+    // console.log(response)
+})
+
+
+const eventDelete=document.querySelector('#eventDelete')
+eventDelete.addEventListener('click',async ()=>{
+    const eventID = document.querySelector('#eventID').value
+    const response=await fetch(`/api/event/${eventID}`,{
+        method: 'DELETE'
+    })
+    const menuMessage = document.querySelector('.eventMessage')
+    if (response.status == 200) menuMessage.textContent = "Event Deleted"
+    console.log(response);
+
 })
