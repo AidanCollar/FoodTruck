@@ -110,6 +110,10 @@ ol li{
     margin-bottom: 20px;
 }
 
+.menuMessage {
+    color: green
+}
+
 
 footer{
     background-color: orange;
