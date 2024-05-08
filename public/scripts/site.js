@@ -90,3 +90,15 @@ menuUpdate.addEventListener('click', async () => {
     if (response.status == 200) menuMessage.textContent = "Menu Item Updated"
     // console.log(response)
 })
+
+
+const menuDelete=document.querySelector('#menuDelete')
+menuDelete.addEventListener('click',async ()=>{
+    const itemID = document.querySelector('#itemID').value
+    const response=await fetch(`/api/menu/${itemID}`,{
+        method: 'DELETE'
+    })
+    const menuMessage = document.querySelector('.menuMessage')
+    if (response.status == 200) menuMessage.textContent = "Menu Item Deleted!!!!!! "
+    console.log(response);
+})
