@@ -28,13 +28,14 @@ displayMenu()
 const displayEvents=async()=>{
     const response = await fetch('/api/event')
     const event = await response.json() 
-    const unorderedlist = document.getElementById('events')
+    const para = document.getElementById('events')
     event.forEach(item=>{
+    const details = document.createElement('details')
+    const summary = document.createElement('summary')
     const li2 = document.createElement('li')
     const ul = document.createElement('ul')
-    const li = document.createElement('li')
-    li.textContent="Event Name :"+item.name 
-    unorderedlist.appendChild(li)
+    summary.textContent=item.name
+
     
     
     li2.textContent+="Location: "+item.location
@@ -45,7 +46,9 @@ const displayEvents=async()=>{
     li4 = document.createElement('li')
     li4.textContent+="Hours: "+item.hours
     ul.appendChild(li4)
-    unorderedlist.appendChild(ul)
+    details.appendChild(summary)
+    details.appendChild(ul)
+    para.appendChild(details)
 
 
    
