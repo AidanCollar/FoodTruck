@@ -118,6 +118,10 @@ ol li{
     color: green
 }
 
+.eventMessage {
+    color: green
+}
+
 #events{
     color: rgb(129, 71, 0);
 }
