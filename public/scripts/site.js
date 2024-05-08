@@ -23,6 +23,8 @@ const displayMenu = async () => {
     })
 }
 
+displayMenu()
+
 const displayEvents=async()=>{
     const response = await fetch('/api/event')
     const event = await response.json() 
@@ -52,7 +54,6 @@ const displayEvents=async()=>{
 }
 displayEvents()
 
-displayMenu()
 
 
 
