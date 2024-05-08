@@ -120,12 +120,6 @@ ol li{
 
 #events{
     color: rgb(129, 71, 0);
-    line-height: 1.7em;
-}
-
-#events > li{
-    font-weight: 600;
-    text-decoration: underline;
 }
 
 aside{
