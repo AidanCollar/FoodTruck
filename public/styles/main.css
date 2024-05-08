@@ -46,7 +46,7 @@ section{
     border-bottom: 1px solid rgb(105, 68, 0, 50%);
 }
 
-section h2{
+h2{
     color: rgb(129, 71, 0);
 }
 
@@ -118,6 +118,19 @@ ol li{
     color: green
 }
 
+#events{
+    color: rgb(129, 71, 0);
+    line-height: 1.7em;
+}
+
+#events > li{
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+aside{
+    margin-bottom: 40px;
+}
 
 footer{
     background-color: orange;

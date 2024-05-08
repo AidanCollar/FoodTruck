@@ -101,4 +101,51 @@ menuDelete.addEventListener('click',async ()=>{
     const menuMessage = document.querySelector('.menuMessage')
     if (response.status == 200) menuMessage.textContent = "Menu Item Deleted!!!!!! "
     console.log(response);
+
+    
+// Admin page functionality - Events
+
+const eventAdd = document.querySelector('#eventAdd')
+menuAdd.addEventListener('click', async () => {
+    const eventName = document.querySelector('#eventName').value
+    const eventLocation = document.querySelector('#eventLocation').value
+    const eventDate = document.querySelector('#eventDate').value
+    const eventTime = document.querySelector('#eventTime').value
+    const response = await fetch('/api/event', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: eventName, location: eventLocation, date: eventDate, hours: eventTime })
+    })
+    const menuMessage = document.querySelector('.menuMessage')
+    if (response.status == 200) menuMessage.textContent = "Event Added"
+    console.log(response)
+})
+
+const eventUpdate = document.querySelector('#eventUpdate')
+menuUpdate.addEventListener('click', async () => {
+    const itemID = document.querySelector('#itemID').value
+    const itemName = document.querySelector('#itemName').value
+    const itemDesc = document.querySelector('#itemDesc').value
+    const itemPrice = document.querySelector('#itemPrice').value
+    const response = await fetch(`/api/menu/${itemID}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: itemName, description: itemDesc, price: itemPrice })
+    })
+    const menuMessage = document.querySelector('.menuMessage')
+    if (response.status == 200) menuMessage.textContent = "Menu Item Updated"
+    // console.log(response)
+})
+
+
+const eventDelete=document.querySelector('#eventDelete')
+menuDelete.addEventListener('click',async ()=>{
+    const itemID = document.querySelector('#itemID').value
+    const response=await fetch(`/api/menu/${itemID}`,{
+        method: 'DELETE'
+    })
+    const menuMessage = document.querySelector('.menuMessage')
+    if (response.status == 200) menuMessage.textContent = "Menu Item Deleted!!!!!! "
+    console.log(response);
+
 })
